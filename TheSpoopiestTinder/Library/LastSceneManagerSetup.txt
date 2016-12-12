@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FirstProfile.unity
+- path: Assets/SecondProfile.unity
   isLoaded: 1
   isActive: 1

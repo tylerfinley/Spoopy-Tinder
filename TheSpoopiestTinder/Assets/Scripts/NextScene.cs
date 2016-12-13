@@ -26,6 +26,6 @@ public class NextScene : MonoBehaviour {
             Debug.Log("You said no!");
         }
         int current = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(current++);
+        SceneManager.LoadScene(current+1);
     }
 }

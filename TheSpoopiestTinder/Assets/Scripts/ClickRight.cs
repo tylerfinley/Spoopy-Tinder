@@ -21,6 +21,15 @@ public class ClickRight : MonoBehaviour {
 
     void moveRight()
     {
-
+        if(image1.activeSelf == true)
+        {
+            image1.SetActive(false);
+            image2.SetActive(true);
+        }
+        else if(image2.activeSelf == true)
+        {
+            image2.SetActive(false);
+            image3.SetActive(true);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ClickRight : MonoBehaviour {
     public Button rightPic;
@@ -21,6 +22,6 @@ public class ClickRight : MonoBehaviour {
 
     void moveRight()
     {
-
+		SceneManager.LoadScene ("");
     }
 }

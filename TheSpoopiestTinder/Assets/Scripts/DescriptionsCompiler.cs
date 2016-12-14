@@ -23,16 +23,13 @@ public class DescriptionsCompiler : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (!dated) { GameObject.Find("Nope").SetActive(true); }
-        else
+	void Update ()
+    {
+        for (int i = 0; i < 20; i++)
         {
-            for(int i = 0; i<20; i++)
-            {
-                dates[i].SetActive(false);
-            }
-            dates[(int)yesno[current]].SetActive(true);
+            dates[i].SetActive(false);
         }
+        dates[(int)yesno[current]].SetActive(true);
 	}
 
     public void GoRight()

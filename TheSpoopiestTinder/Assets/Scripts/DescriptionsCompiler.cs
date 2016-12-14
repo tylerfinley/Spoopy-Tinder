@@ -6,6 +6,7 @@ public class DescriptionsCompiler : MonoBehaviour {
     public Datalogger data;
     public bool dated;
     public GameObject[] dates = new GameObject[20];
+    public ArrayList yesno = new ArrayList();
 	// Use this for initialization
 	void Start () {
         dated = false;
@@ -14,11 +15,11 @@ public class DescriptionsCompiler : MonoBehaviour {
         {
             if((bool)data.matches[i])
             {
+                yesno.Add(i);
                 dated = true;
-                current = 0;
-                break;
             }
         }
+        current = 0;
     }
 	
 	// Update is called once per frame
@@ -30,7 +31,7 @@ public class DescriptionsCompiler : MonoBehaviour {
             {
                 dates[i].SetActive(false);
             }
-            dates[current].SetActive(true);
+            dates[(int)yesno[current]].SetActive(true);
         }
 	}
 
@@ -38,24 +39,19 @@ public class DescriptionsCompiler : MonoBehaviour {
     {
         int looped = current;
         current++;
-        while (!(bool)data.matches[current])
+        if (current >= yesno.Count)
         {
-            current++;
-            if (current > 19) { current = 0; }
-            if(current == looped)  { break; }
+            current = 0;
         }
-
     }
     
     public void GoLeft()
     {
         int looped = current;
         current--;
-        while (!(bool)data.matches[current])
+        if (current < 0)
         {
-            current--;
-            if (current < 0) { current = 19; }
-            if (current == looped) {  break; }
+            current = yesno.Count-1;
         }
     }
 }

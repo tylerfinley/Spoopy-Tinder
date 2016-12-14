@@ -30,7 +30,7 @@ public class NextScene : MonoBehaviour {
             noisePlayer.GetComponent<AudioSource>().PlayOneShot(ehSound);
             //ehButton.SetActive(false);
             //noButton.SetActive(false);
-            StartCoroutine(sceneWait2());
+            StartCoroutine(sceneWait());
 
         }
         else
@@ -51,13 +51,6 @@ public class NextScene : MonoBehaviour {
     IEnumerator sceneWait()
     {
         yield return new WaitForSecondsRealtime(2.75f);
-        int current = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(current + 1);
-    }
-
-    IEnumerator sceneWait2()
-    {
-        yield return new WaitForSecondsRealtime(1f);
         int current = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(current + 1);
     }

@@ -4,19 +4,16 @@ using System.Collections;
 public class DescriptionsCompiler : MonoBehaviour {
     public int current;
     public Datalogger data;
-    public bool dated;
     public GameObject[] dates = new GameObject[20];
     public ArrayList yesno = new ArrayList();
 	// Use this for initialization
 	void Start () {
-        dated = false;
         data = GameObject.Find("Datalogger").GetComponent<Datalogger>();
         for(int i = 0; i<data.matches.Count; i++)
         {
-            if((bool)data.matches[i])
+            if((bool)data.matches[i] == true)
             {
                 yesno.Add(i);
-                dated = true;
             }
         }
         current = 0;

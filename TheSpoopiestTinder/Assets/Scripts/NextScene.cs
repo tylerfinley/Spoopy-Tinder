@@ -25,7 +25,7 @@ public class NextScene : MonoBehaviour {
     {
         if (transform.CompareTag("Yes"))
         {
-            
+            GameObject.Find("Datalogger").GetComponent<Datalogger>().matches.Add(true);
             Debug.Log("You said yes!");
             noisePlayer.GetComponent<AudioSource>().PlayOneShot(ehSound);
             //ehButton.SetActive(false);

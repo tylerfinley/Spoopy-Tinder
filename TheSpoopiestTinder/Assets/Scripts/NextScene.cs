@@ -15,7 +15,7 @@ public class NextScene : MonoBehaviour {
 	}
     public void loadNextScene()
     {
-        if (transform.parent.gameObject.name == "Eh")
+        if (transform.CompareTag("Yes"))
         {
             GameObject.Find("Datalogger").GetComponent<Datalogger>().matches.Add(true);
             Debug.Log("You said yes!");
@@ -26,6 +26,6 @@ public class NextScene : MonoBehaviour {
             Debug.Log("You said no!");
         }
         int current = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(current++);
+        SceneManager.LoadScene(current+1);
     }
 }

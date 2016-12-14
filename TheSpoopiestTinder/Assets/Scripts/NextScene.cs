@@ -22,7 +22,6 @@ public class NextScene : MonoBehaviour {
         }
         else
         {
-            GameObject.Find("Datalogger").GetComponent<Datalogger>().matches.Add(false);
             Debug.Log("You said no!");
         }
         int current = SceneManager.GetActiveScene().buildIndex;
